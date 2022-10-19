@@ -4,6 +4,7 @@ import { map, Observable, tap } from 'rxjs';
 import { UserLogin, RespDB } from '../interfaces/userAuth.interfaces';
 import { UserModel } from '../model/user.model';
 import { environment } from '../../environments/environment';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class AuthService {
     return this.user;
   }
 
-  getToken(token: string) {
+  setToken(token: string) {
     localStorage.setItem('token', token);
   }
 
@@ -25,9 +26,13 @@ export class AuthService {
     return this.http.post<RespDB>(`${this.url}/auth/login`, data).pipe(
       tap(({ ok, userDB, token }) => {
         this.user = new UserModel(userDB._id, userDB.email, userDB.name);
-        this.getToken(token);
+        this.setToken(token);
         return userDB;
       })
     );
   }
+
+  // validarToken(): Observable<boolean>{
+  //   return this.http.post<>()
+  // }
 }
