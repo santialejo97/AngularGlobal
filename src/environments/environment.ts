@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://nodedocker-production.up.railway.app',
+  url: 'http://localhost:3000',
+  imagesPath: 'https://image.tmdb.org/t/p/original/',
 };
 
 /*
