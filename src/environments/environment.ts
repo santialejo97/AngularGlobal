@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url: 'http://localhost:3000',
-  imagesPath: 'https://image.tmdb.org/t/p/original/',
+  imagesPath: 'https://image.tmdb.org/t/p/original',
 };
 
 /*

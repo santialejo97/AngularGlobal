@@ -1,6 +1,10 @@
 <div class="card" style="width: 8rem; height: 19rem">
   <img
-    [src]="this.images"
+    [src]="
+      this.movie.poster_path || this.movie.backdrop_path
+        ? this.images
+        : this.noImages
+    "
     class="card-img-top"
     [alt]="this.movie.original_title"
   />

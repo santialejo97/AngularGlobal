@@ -1,6 +1,6 @@
 export interface MoviesResponse {
   ok: boolean;
-  msg: string;
+  msg?: string;
   movie: Movie;
 }
 

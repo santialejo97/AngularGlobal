@@ -1,0 +1,14 @@
+<form (ngSubmit)="buscar()">
+  <div class="input-group">
+    <span class="input-group-text"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search"
+      name="termino"
+      [(ngModel)]="this.terminoSearch"
+    />
+  </div>
+</form>

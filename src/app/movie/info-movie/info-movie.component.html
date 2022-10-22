@@ -1,1 +1,57 @@
-<p>info-movie works!</p>
+<div class="container">
+  <app-heading titlePages="Movie"></app-heading>
+  <div class="row mt-2" *ngIf="this.movie">
+    <div class="col-4">
+      <div class="poster shadow-lg">
+        <img [src]="this.images" [alt]="this.movie.original_title" />
+      </div>
+    </div>
+    <div class="col">
+      <h2>{{ this.movie.title }}</h2>
+      <h5>Title Original: {{ this.movie.original_title }}</h5>
+      <hr />
+      <div class="row">
+        <div class="col-5">
+          <div class="ratio ratio-4x3">
+            <iframe
+              src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col">
+          <p class="lh-base">{{ this.movie.overview }}</p>
+        </div>
+      </div>
+      <div class="mt-3">
+        <table class="table table-secondary">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">original title</th>
+              <th scope="col">popularity</th>
+              <th scope="col">languages</th>
+              <th scope="col">countries</th>
+              <th scope="col">companies</th>
+              <th scope="col">genres</th>
+              <th scope="col">release date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <th scope="row">{{ movie.original_title }}</th>
+              <td>{{ movie.popularity }}</td>
+              <td>{{ movie.spoken_languages[0].name }}</td>
+              <td>{{ movie.production_countries[0].name }}</td>
+              <td>{{ movie.production_companies[0].name }}</td>
+              <td>{{ movie.genres[0].name }}</td>
+              <td>{{ movie.release_date }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>casts movie</div>
+      <div>similar movie</div>
+    </div>
+  </div>
+</div>
